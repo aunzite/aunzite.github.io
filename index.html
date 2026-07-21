@@ -8,110 +8,135 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Loader -->
   <div class="loader" id="loader">
-    <div class="loader-name">
-      <span class="loader-outline">AUN ALI</span>
-      <span class="loader-fill" id="loaderFill">AUN ALI</span>
+    <div class="loader-rocket" id="loaderRocket">
+      <svg viewBox="0 0 60 90" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M30 6 C 38 18, 41 34, 39 52 L 21 52 C 19 34, 22 18, 30 6 Z"/>
+        <path d="M21 46 C 14 50, 10 58, 9 66 C 15 63, 19 60, 22 56"/>
+        <path d="M39 46 C 46 50, 50 58, 51 66 C 45 63, 41 60, 38 56"/>
+        <circle cx="30" cy="30" r="5.5"/>
+        <path d="M25 52 L 27 60 M 30 52 L 30 64 M 35 52 L 33 60" class="rocket-flame"/>
+        <path d="M27 22 C 29 20, 32 20, 33 22" stroke-width="1.4" opacity="0.5"/>
+      </svg>
     </div>
-    <div class="loader-meta">
-      <span class="loader-count" id="loaderCount">00</span>
-      <span class="loader-label">Ajax → Kingston, Ontario</span>
-    </div>
+    <span class="loader-count" id="loaderCount">0%</span>
   </div>
 
-  <div class="grain" aria-hidden="true"></div>
   <div class="cursor"></div>
   <div class="scroll-progress"></div>
 
   <!-- Navigation -->
   <nav>
-    <a href="#home" class="nav-logo">Aun Ali</a>
+    <a href="#home" class="nav-logo">aun ali</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">about</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#quests">quest log</a></li>
+      <li><a href="#contact">say hi</a></li>
     </ul>
   </nav>
 
   <!-- Hero -->
   <section class="hero" id="home">
-    <div class="hero-name">
-      <span class="name-line line-1">AUN</span>
-      <span class="name-line line-2">ALI</span>
+    <svg class="doodle-star star-1" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 4 C 21 12, 22 15, 24 18 C 30 19, 33 20, 36 20 C 30 22, 26 23, 24 24 C 22 29, 21 33, 20 37 C 19 31, 18 26, 16 24 C 11 22, 7 21, 4 20 C 10 19, 14 18, 16 17 C 18 13, 19 8, 20 4 Z"/></svg>
+    <svg class="doodle-star star-2" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 4 C 21 12, 22 15, 24 18 C 30 19, 33 20, 36 20 C 30 22, 26 23, 24 24 C 22 29, 21 33, 20 37 C 19 31, 18 26, 16 24 C 11 22, 7 21, 4 20 C 10 19, 14 18, 16 17 C 18 13, 19 8, 20 4 Z"/></svg>
+    <svg class="doodle-star star-3" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 4 C 21 12, 22 15, 24 18 C 30 19, 33 20, 36 20 C 30 22, 26 23, 24 24 C 22 29, 21 33, 20 37 C 19 31, 18 26, 16 24 C 11 22, 7 21, 4 20 C 10 19, 14 18, 16 17 C 18 13, 19 8, 20 4 Z"/></svg>
+    <svg class="doodle-star star-4" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 4 C 21 12, 22 15, 24 18 C 30 19, 33 20, 36 20 C 30 22, 26 23, 24 24 C 22 29, 21 33, 20 37 C 19 31, 18 26, 16 24 C 11 22, 7 21, 4 20 C 10 19, 14 18, 16 17 C 18 13, 19 8, 20 4 Z"/></svg>
+
+    <div class="hero-inner">
+      <p class="hero-hello">hi, i'm</p>
+      <h1 class="hero-name">Aun Ali</h1>
+      <svg class="hero-underline" viewBox="0 0 420 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 14 C 60 8, 120 18, 180 12 C 240 6, 300 16, 414 10" pathLength="1"/></svg>
+      <p class="hero-sub">computing @ queen's university · i build software that actually ships</p>
     </div>
-    <div class="hero-meta">
-      <p class="hero-tagline">Computing @ Queen's University</p>
-      <p class="hero-sub">I build software that <em>ships</em>.</p>
+
+    <div class="hero-rocket" id="heroRocket">
+      <svg viewBox="0 0 120 180" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <!-- messy crayon fill -->
+        <path class="scribble" d="M52 30 L 66 34 M50 42 L 70 46 M48 56 L 72 60 M47 70 L 73 74 M46 84 L 74 88" stroke-width="5" opacity="0.14"/>
+        <path d="M60 10 C 76 32, 82 62, 78 100 L 42 100 C 38 62, 44 32, 60 10 Z"/>
+        <circle cx="60" cy="56" r="11"/>
+        <circle cx="60" cy="56" r="5" opacity="0.4"/>
+        <path d="M42 88 C 28 96, 20 112, 18 128 C 30 122, 38 116, 44 108"/>
+        <path d="M78 88 C 92 96, 100 112, 102 128 C 90 122, 82 116, 76 108"/>
+        <path class="rocket-flame" d="M50 100 L 54 118 M 60 100 L 60 130 M 70 100 L 66 118"/>
+        <path d="M30 150 C 40 146, 50 152, 60 148 C 70 144, 80 152, 90 147" opacity="0.35" stroke-dasharray="4 7"/>
+      </svg>
     </div>
-    <div class="hero-corner">
-      <span id="localTime">--:--</span>
-      <span>Ontario, Canada</span>
-    </div>
+
     <div class="hero-scroll">
-      <span class="scroll-label">Scroll</span>
-      <div class="scroll-line"></div>
+      <span>scroll</span>
+      <svg viewBox="0 0 24 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 C 11 14, 13 24, 12 34 M 6 28 C 8 32, 10 35, 12 38 C 14 35, 16 32, 18 28"/></svg>
     </div>
   </section>
 
   <!-- Marquee -->
   <div class="marquee-wrap" aria-hidden="true">
     <div class="marquee-track">
-      <span>Next.js</span><span class="dot">·</span>
-      <span>TypeScript</span><span class="dot">·</span>
-      <span>Java</span><span class="dot">·</span>
-      <span>Python</span><span class="dot">·</span>
-      <span>PyTorch</span><span class="dot">·</span>
-      <span>Twilio</span><span class="dot">·</span>
-      <span>Tailwind</span><span class="dot">·</span>
-      <span>Vercel</span><span class="dot">·</span>
-      <span>Machine Learning</span><span class="dot">·</span>
-      <span>Next.js</span><span class="dot">·</span>
-      <span>TypeScript</span><span class="dot">·</span>
-      <span>Java</span><span class="dot">·</span>
-      <span>Python</span><span class="dot">·</span>
-      <span>PyTorch</span><span class="dot">·</span>
-      <span>Twilio</span><span class="dot">·</span>
-      <span>Tailwind</span><span class="dot">·</span>
-      <span>Vercel</span><span class="dot">·</span>
-      <span>Machine Learning</span><span class="dot">·</span>
+      <span>next.js</span><span class="dot">✦</span>
+      <span>typescript</span><span class="dot">✦</span>
+      <span>java</span><span class="dot">✦</span>
+      <span>python</span><span class="dot">✦</span>
+      <span>pytorch</span><span class="dot">✦</span>
+      <span>twilio</span><span class="dot">✦</span>
+      <span>tailwind</span><span class="dot">✦</span>
+      <span>vercel</span><span class="dot">✦</span>
+      <span>machine learning</span><span class="dot">✦</span>
+      <span>next.js</span><span class="dot">✦</span>
+      <span>typescript</span><span class="dot">✦</span>
+      <span>java</span><span class="dot">✦</span>
+      <span>python</span><span class="dot">✦</span>
+      <span>pytorch</span><span class="dot">✦</span>
+      <span>twilio</span><span class="dot">✦</span>
+      <span>tailwind</span><span class="dot">✦</span>
+      <span>vercel</span><span class="dot">✦</span>
+      <span>machine learning</span><span class="dot">✦</span>
     </div>
   </div>
 
   <!-- About -->
   <section class="section about" id="about">
-    <p class="section-label reveal">01 / About</p>
+    <h2 class="section-title reveal">about me <svg class="title-circle" viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M30 12 C 90 2, 180 6, 190 28 C 196 48, 120 56, 60 52 C 16 48, 4 34, 22 18" pathLength="1"/></svg></h2>
     <div class="about-grid">
       <div class="about-photo reveal">
-        <img src="assets/me.jpg" alt="Aun Ali" id="aboutPhoto" onerror="this.closest('.about-photo').classList.add('empty')">
-        <span class="photo-caption">Kingston winters hit different</span>
+        <div class="polaroid">
+          <span class="tape"></span>
+          <img src="assets/me.jpg" alt="Aun Ali" onerror="this.closest('.about-photo').classList.add('empty')">
+          <span class="polaroid-caption">me, probably debugging</span>
+        </div>
+        <div class="doodle-face" aria-hidden="true">
+          <svg viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M100 40 C 140 40, 156 76, 152 120 C 148 164, 130 196, 100 198 C 70 196, 52 164, 48 120 C 44 76, 60 40, 100 40 Z"/>
+            <path d="M52 70 C 48 46, 66 26, 92 24 C 76 32, 72 40, 74 46 C 84 34, 100 28, 116 30 C 104 36, 102 42, 104 48 C 118 38, 136 40, 148 54 C 138 52, 132 54, 130 60 C 142 62, 150 72, 150 84 C 142 74, 134 72, 128 74" stroke-width="2.8"/>
+            <rect x="58" y="98" width="36" height="28" rx="6"/>
+            <rect x="106" y="98" width="36" height="28" rx="6"/>
+            <path d="M94 110 L 106 110 M58 108 L 48 104 M142 108 L 152 104"/>
+            <path d="M96 148 C 98 152, 102 152, 104 148" />
+            <path d="M84 172 C 92 180, 108 180, 116 172"/>
+            <text x="100" y="228" text-anchor="middle" class="doodle-face-caption">photo loading... (imagine me here)</text>
+          </svg>
+        </div>
       </div>
       <div class="about-body">
         <p class="about-text reveal">
-          Second-year computing student at Queen's. I was self-taught before university and I still learn best by building: a rental platform running a real business, an SMS agent that recovers missed calls for local shops, a deepfake detector, a game from scratch. If it's live and someone's actually using it, I'm interested.
+          second-year computing student at queen's. self-taught before university, still learning best by building: a rental platform running a real business, an sms agent that recovers missed calls for local shops, a deepfake detector, a game from scratch.
         </p>
         <p class="about-text reveal">
-          Right now I'm co-running <a href="https://callflowline.com" target="_blank" rel="noopener" class="inline-link">Flowline Communications</a> and looking for the next hard problem.
+          if it's live and someone's actually using it, i'm interested. right now i'm co-running <a href="https://callflowline.com" target="_blank" rel="noopener" class="inline-link">flowline communications</a> and looking for the next hard problem.
         </p>
-        <div class="about-links reveal">
-          <a href="mailto:aun.ali@queensu.ca" class="link-line">Email</a>
-          <a href="https://linkedin.com/in/aunzite" target="_blank" rel="noopener" class="link-line">LinkedIn</a>
-          <a href="https://github.com/aunzite" target="_blank" rel="noopener" class="link-line">GitHub</a>
-          <a href="https://instagram.com/neuraunn" target="_blank" rel="noopener" class="link-line">Instagram</a>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- Projects -->
   <section class="section projects" id="projects">
-    <p class="section-label reveal">02 / Projects</p>
+    <h2 class="section-title reveal">things i built</h2>
     <div class="project-list">
 
       <div class="project-row reveal">
@@ -120,18 +145,18 @@
             <span class="project-num">01</span>
             <div class="project-name-wrap">
               <span class="project-name">Yorkline Estates</span>
-              <span class="project-live">● Live</span>
+              <span class="project-live">live ✦</span>
             </div>
           </div>
           <div class="project-right">
-            <span class="project-tech">Next.js · TypeScript · Tailwind</span>
+            <span class="project-tech">next.js · typescript · tailwind</span>
             <span class="project-arrow">+</span>
           </div>
         </div>
         <div class="project-expand">
           <div class="project-expand-inner">
-            <p class="project-desc">Full rental platform built solo for a real property business. City search with interactive maps, availability calendars, a four-step booking flow, and an admin dashboard with full property CRUD and auto-generated listing copy. Running in production on Vercel.</p>
-            <a href="https://yorkline-estates.vercel.app" target="_blank" rel="noopener" class="project-link">Visit site ↗</a>
+            <p class="project-desc">full rental platform built solo for a real property business. city search with interactive maps, availability calendars, a four-step booking flow, and an admin dashboard with full property CRUD and auto-generated listing copy. running in production on vercel.</p>
+            <a href="https://yorkline-estates.vercel.app" target="_blank" rel="noopener" class="project-link">visit site ↗</a>
           </div>
         </div>
       </div>
@@ -142,18 +167,18 @@
             <span class="project-num">02</span>
             <div class="project-name-wrap">
               <span class="project-name">Flowline Communications</span>
-              <span class="project-live">● Live</span>
+              <span class="project-live">live ✦</span>
             </div>
           </div>
           <div class="project-right">
-            <span class="project-tech">Astro · Twilio · SMS AI</span>
+            <span class="project-tech">astro · twilio · sms ai</span>
             <span class="project-arrow">+</span>
           </div>
         </div>
         <div class="project-expand">
           <div class="project-expand-inner">
-            <p class="project-desc">Co-founded a missed-call recovery agency for home-service businesses. When a call gets missed, our system texts the caller back, qualifies the job over SMS, and books it into the owner's calendar. I run sales and built the marketing site.</p>
-            <a href="https://callflowline.com" target="_blank" rel="noopener" class="project-link">Visit site ↗</a>
+            <p class="project-desc">co-founded a missed-call recovery agency for home-service businesses. when a call gets missed, our system texts the caller back, qualifies the job over sms, and books it into the owner's calendar. i run sales and built the marketing site.</p>
+            <a href="https://callflowline.com" target="_blank" rel="noopener" class="project-link">visit site ↗</a>
           </div>
         </div>
       </div>
@@ -167,14 +192,14 @@
             </div>
           </div>
           <div class="project-right">
-            <span class="project-tech">TypeScript · Python · PyTorch</span>
+            <span class="project-tech">typescript · python · pytorch</span>
             <span class="project-arrow">+</span>
           </div>
         </div>
         <div class="project-expand">
           <div class="project-expand-inner">
-            <p class="project-desc">Real-time deepfake detection web app using MediaPipe for facial landmark extraction and a PyTorch model for classification. TypeScript frontend, FastAPI backend.</p>
-            <a href="https://github.com/aunzite/DeepShield" target="_blank" rel="noopener" class="project-link">View on GitHub ↗</a>
+            <p class="project-desc">real-time deepfake detection web app using mediapipe for facial landmark extraction and a pytorch model for classification. typescript frontend, fastapi backend.</p>
+            <a href="https://github.com/aunzite/DeepShield" target="_blank" rel="noopener" class="project-link">view on github ↗</a>
           </div>
         </div>
       </div>
@@ -188,14 +213,14 @@
             </div>
           </div>
           <div class="project-right">
-            <span class="project-tech">Java</span>
+            <span class="project-tech">java</span>
             <span class="project-arrow">+</span>
           </div>
         </div>
         <div class="project-expand">
           <div class="project-expand-inner">
-            <p class="project-desc">2D side-scrolling game built in Java with custom physics, collision detection, and sprite animation. Two-person project where I handled all the technical systems.</p>
-            <a href="https://github.com/aunzite/Limitless" target="_blank" rel="noopener" class="project-link">View on GitHub ↗</a>
+            <p class="project-desc">2d side-scrolling game built in java with custom physics, collision detection, and sprite animation. two-person project where i handled all the technical systems.</p>
+            <a href="https://github.com/aunzite/Limitless" target="_blank" rel="noopener" class="project-link">view on github ↗</a>
           </div>
         </div>
       </div>
@@ -209,13 +234,13 @@
             </div>
           </div>
           <div class="project-right">
-            <span class="project-tech">Java · Robotics</span>
+            <span class="project-tech">java · robotics</span>
             <span class="project-arrow">+</span>
           </div>
         </div>
         <div class="project-expand">
           <div class="project-expand-inner">
-            <p class="project-desc">Sole programmer on a FIRST Tech Challenge robot: autonomous routines, driver-control mapping, and sensor integration for competition play.</p>
+            <p class="project-desc">sole programmer on a FIRST tech challenge robot: autonomous routines, driver-control mapping, and sensor integration for competition play.</p>
           </div>
         </div>
       </div>
@@ -229,14 +254,14 @@
             </div>
           </div>
           <div class="project-right">
-            <span class="project-tech">Python · Gradio</span>
+            <span class="project-tech">python · gradio</span>
             <span class="project-arrow">+</span>
           </div>
         </div>
         <div class="project-expand">
           <div class="project-expand-inner">
-            <p class="project-desc">Interactive algorithm visualizer built with Gradio and deployed on Hugging Face Spaces. Animates bubble sort step-by-step.</p>
-            <a href="https://github.com/aunzite/CISC121-Final-Project" target="_blank" rel="noopener" class="project-link">View on GitHub ↗</a>
+            <p class="project-desc">interactive algorithm visualizer built with gradio and deployed on hugging face spaces. animates bubble sort step-by-step.</p>
+            <a href="https://github.com/aunzite/CISC121-Final-Project" target="_blank" rel="noopener" class="project-link">view on github ↗</a>
           </div>
         </div>
       </div>
@@ -244,80 +269,124 @@
     </div>
   </section>
 
-  <!-- Experience -->
-  <section class="section experience" id="experience">
-    <p class="section-label reveal">03 / Experience</p>
-    <div class="exp-list">
+  <!-- Quest Log (Experience) -->
+  <section class="section quests" id="quests">
+    <h2 class="section-title reveal">quest log</h2>
+    <div class="quest-list">
 
-      <div class="exp-row reveal">
-        <div class="exp-left">
-          <span class="exp-title">Co-Founder</span>
-          <span class="exp-org">Flowline Communications</span>
+      <div class="quest-row reveal active">
+        <span class="quest-check">
+          <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6 C 14 4, 24 5, 25 12 C 26 20, 20 26, 12 25 C 5 24, 3 16, 6 8" /><path d="M11 15 L 14 19 L 21 10" class="quest-tick"/></svg>
+        </span>
+        <div class="quest-left">
+          <span class="quest-title">co-founder · flowline communications</span>
+          <span class="quest-desc">main quest — building a missed-call recovery agency</span>
         </div>
-        <span class="exp-date">Jul 2026 — Present</span>
+        <span class="quest-date">jul 2026 → now</span>
       </div>
 
-      <div class="exp-row reveal">
-        <div class="exp-left">
-          <span class="exp-title">Full Stack Developer</span>
-          <span class="exp-org">Yorkline Estates</span>
+      <div class="quest-row reveal active">
+        <span class="quest-check">
+          <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6 C 14 4, 24 5, 25 12 C 26 20, 20 26, 12 25 C 5 24, 3 16, 6 8" /><path d="M11 15 L 14 19 L 21 10" class="quest-tick"/></svg>
+        </span>
+        <div class="quest-left">
+          <span class="quest-title">full stack developer · yorkline estates</span>
+          <span class="quest-desc">side quest — rental platform, live in production</span>
         </div>
-        <span class="exp-date">2026 — Present</span>
+        <span class="quest-date">2026 → now</span>
       </div>
 
-      <div class="exp-row reveal">
-        <div class="exp-left">
-          <span class="exp-title">Research Lead</span>
-          <span class="exp-org">Riipen Labs × UpNxxt</span>
+      <div class="quest-row reveal done">
+        <span class="quest-check">
+          <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6 C 14 4, 24 5, 25 12 C 26 20, 20 26, 12 25 C 5 24, 3 16, 6 8" /><path d="M11 15 L 14 19 L 21 10" class="quest-tick"/></svg>
+        </span>
+        <div class="quest-left">
+          <span class="quest-title">research lead · riipen labs × upnxxt</span>
+          <span class="quest-desc">completed — led market research sprint</span>
         </div>
-        <span class="exp-date">Jun 2026</span>
+        <span class="quest-date">jun 2026 ✓</span>
       </div>
 
-      <div class="exp-row reveal">
-        <div class="exp-left">
-          <span class="exp-title">Deputy of Finance</span>
-          <span class="exp-org">Arts &amp; Science Students' Society</span>
+      <div class="quest-row reveal active">
+        <span class="quest-check">
+          <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6 C 14 4, 24 5, 25 12 C 26 20, 20 26, 12 25 C 5 24, 3 16, 6 8" /><path d="M11 15 L 14 19 L 21 10" class="quest-tick"/></svg>
+        </span>
+        <div class="quest-left">
+          <span class="quest-title">deputy of finance · arts &amp; science students' society</span>
+          <span class="quest-desc">guild duties — budgets and approvals</span>
         </div>
-        <span class="exp-date">May 2026 — Present</span>
+        <span class="quest-date">may 2026 → now</span>
       </div>
 
-      <div class="exp-row reveal">
-        <div class="exp-left">
-          <span class="exp-title">Marketing Executive</span>
-          <span class="exp-org">Queen's UX Club</span>
+      <div class="quest-row reveal active">
+        <span class="quest-check">
+          <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6 C 14 4, 24 5, 25 12 C 26 20, 20 26, 12 25 C 5 24, 3 16, 6 8" /><path d="M11 15 L 14 19 L 21 10" class="quest-tick"/></svg>
+        </span>
+        <div class="quest-left">
+          <span class="quest-title">marketing exec · queen's ux club</span>
+          <span class="quest-desc">guild duties — making design look good</span>
         </div>
-        <span class="exp-date">2025 — Present</span>
+        <span class="quest-date">2025 → now</span>
       </div>
 
-      <div class="exp-row reveal">
-        <div class="exp-left">
-          <span class="exp-title">BSc Computing (Honours)</span>
-          <span class="exp-org">Queen's University</span>
+      <div class="quest-row reveal active">
+        <span class="quest-check">
+          <svg viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6 C 14 4, 24 5, 25 12 C 26 20, 20 26, 12 25 C 5 24, 3 16, 6 8" /><path d="M11 15 L 14 19 L 21 10" class="quest-tick"/></svg>
+        </span>
+        <div class="quest-left">
+          <span class="quest-title">bsc computing (honours) · queen's university</span>
+          <span class="quest-desc">the long campaign — 2 of 4 chapters</span>
         </div>
-        <span class="exp-date">2025 — Present</span>
+        <span class="quest-date">2025 → 2029</span>
       </div>
 
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact / Player cards -->
   <section class="section contact" id="contact">
-    <p class="section-label reveal">04 / Contact</p>
-    <div class="contact-big reveal">
-      <span>Let's</span>
-      <span class="contact-em">talk.</span>
+    <h2 class="section-title reveal">say hi</h2>
+    <div class="card-grid">
+
+      <a href="https://www.instagram.com/nyuraun/" target="_blank" rel="noopener" class="player-card reveal">
+        <span class="card-label">instagram</span>
+        <span class="card-handle">@nyuraun</span>
+        <span class="card-line">life outside the terminal</span>
+        <svg class="card-doodle" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="10" width="40" height="40" rx="11"/><circle cx="30" cy="30" r="9"/><circle cx="42" cy="18" r="2.4"/></svg>
+      </a>
+
+      <a href="https://discord.com/users/929787190790217828" target="_blank" rel="noopener" class="player-card reveal">
+        <span class="card-label">discord</span>
+        <span class="card-handle">aunzite</span>
+        <span class="card-line">fastest reply speedrun</span>
+        <svg class="card-doodle" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 16 C 26 12, 34 12, 42 16 C 48 26, 50 36, 48 44 C 43 47, 39 48, 36 46 L 34 42 C 31 43, 29 43, 26 42 L 24 46 C 21 48, 17 47, 12 44 C 10 36, 12 26, 18 16 Z"/><circle cx="24" cy="30" r="2.6"/><circle cx="36" cy="30" r="2.6"/></svg>
+      </a>
+
+      <a href="https://github.com/aunzite" target="_blank" rel="noopener" class="player-card reveal">
+        <span class="card-label">github</span>
+        <span class="card-handle">aunzite</span>
+        <span class="card-line">where the code lives</span>
+        <svg class="card-doodle" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M30 8 C 42 8, 52 18, 52 30 C 52 40, 46 48, 37 51 L 37 44 C 37 41, 36 39, 34 38 C 43 37, 47 32, 47 25 C 47 21, 45 18, 43 16 C 44 13, 43 10, 42 9 C 39 9, 36 11, 34 13 C 31 12, 27 12, 24 13 C 22 11, 19 9, 16 9 C 15 10, 14 13, 15 16 C 13 18, 11 21, 11 25 C 11 32, 15 37, 24 38 C 23 39, 22 40, 22 42 C 20 43, 16 43, 14 40" /></svg>
+      </a>
+
+      <a href="https://linkedin.com/in/aunzite" target="_blank" rel="noopener" class="player-card reveal">
+        <span class="card-label">linkedin</span>
+        <span class="card-handle">in/aunzite</span>
+        <span class="card-line">the professional lore</span>
+        <svg class="card-doodle" viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="10" width="40" height="40" rx="7"/><path d="M20 27 L 20 42 M 20 20 L 20 21 M 28 42 L 28 27 M 28 32 C 30 27, 40 26, 40 33 L 40 42"/></svg>
+      </a>
+
     </div>
-    <div class="contact-links reveal">
-      <a href="mailto:aun.ali@queensu.ca" class="contact-link">aun.ali@queensu.ca</a>
-      <a href="https://linkedin.com/in/aunzite" target="_blank" rel="noopener" class="contact-link">LinkedIn</a>
-      <a href="https://discord.com/users/929787190790217828" target="_blank" rel="noopener" class="contact-link">Discord</a>
-      <a href="https://instagram.com/neuraunn" target="_blank" rel="noopener" class="contact-link">Instagram</a>
+
+    <div class="contact-email reveal">
+      <span class="email-note">or the classic way →</span>
+      <a href="mailto:aun.ali@queensu.ca" class="email-btn">aun.ali@queensu.ca</a>
     </div>
   </section>
 
   <footer>
-    <span>© 2026 Aun Ali</span>
-    <span>Built from scratch. No template.</span>
+    <span>© 2026 aun ali</span>
+    <span>thanks for scrolling :)</span>
   </footer>
 
   <script src="lenis.min.js"></script>
