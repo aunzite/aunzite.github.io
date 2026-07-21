@@ -133,14 +133,14 @@ async function updateDiscord() {
 updateDiscord();
 setInterval(updateDiscord, 30000);
 
-// ── Crayon drawing (fades 5s after you stop) ───────────────────
+// ── Crayon drawing (fades 2s after you stop, page-anchored) ────
 const canvas = document.getElementById('drawCanvas');
 const ctx = canvas.getContext('2d');
 let strokes = [];
 let currentStroke = null;
 let lastDrawTime = 0;
 let fadeStart = null;
-let drawColor = '#e5484d';
+let drawColor = '#1c1b18';
 let rafActive = false;
 
 function sizeCanvas() {
@@ -187,7 +187,7 @@ document.addEventListener('pointerdown', (e) => {
   // don't draw when clicking interactive stuff
   if (e.target.closest('a, button, .project-header, nav')) return;
   document.body.classList.add('drawing');
-  startStroke(e.clientX, e.clientY);
+  startStroke(e.clientX + window.scrollX, e.clientY + window.scrollY);
 });
 
 document.addEventListener('selectstart', (e) => {
@@ -196,7 +196,7 @@ document.addEventListener('selectstart', (e) => {
 
 document.addEventListener('pointermove', (e) => {
   if (e.buttons !== 1) { currentStroke = null; return; }
-  if (currentStroke) extendStroke(e.clientX, e.clientY);
+  if (currentStroke) extendStroke(e.clientX + window.scrollX, e.clientY + window.scrollY);
 });
 
 document.addEventListener('pointerup', () => {
@@ -222,13 +222,15 @@ function drawStroke(s) {
   ctx.stroke();
 }
 
-const FADE_DELAY = 5000;
+const FADE_DELAY = 2000;
 const FADE_TIME = 900;
 
 function renderStrokes(now) {
   ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+  ctx.save();
+  ctx.translate(-window.scrollX, -window.scrollY);
 
-  if (strokes.length === 0) { rafActive = false; return; }
+  if (strokes.length === 0) { ctx.restore(); rafActive = false; return; }
 
   let alpha = 1;
   if (!currentStroke && now - lastDrawTime > FADE_DELAY) {
@@ -236,6 +238,7 @@ function renderStrokes(now) {
     alpha = Math.max(0, 1 - (now - fadeStart) / FADE_TIME);
     if (alpha === 0) {
       strokes = [];
+      ctx.restore();
       ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
       rafActive = false;
       return;
@@ -245,5 +248,11 @@ function renderStrokes(now) {
   ctx.globalAlpha = alpha;
   strokes.forEach(drawStroke);
   ctx.globalAlpha = 1;
+  ctx.restore();
   requestAnimationFrame(renderStrokes);
 }
+
+// stop native image dragging from hijacking draw strokes
+document.addEventListener('dragstart', (e) => {
+  if (e.target.tagName === 'IMG') e.preventDefault();
+});
