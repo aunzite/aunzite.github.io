@@ -520,55 +520,88 @@ body.loaded .decor-shooting {
   opacity: 0.4;
 }
 
-/* ground critters (say hi) */
-.decor-cat {
-  top: 3.2rem;
-  right: 8%;
-  width: clamp(70px, 8vw, 105px);
-  opacity: 0.7;
-}
-
-.decor-bird {
-  bottom: 12%;
-  left: 3%;
-  width: 60px;
-  opacity: 0.6;
-  animation: birdHop 4s ease-in-out infinite;
-}
-
-@keyframes birdHop {
-  0%, 86%, 100% { transform: translate(0, 0); }
-  90% { transform: translate(6px, -8px); }
-  94% { transform: translate(12px, 0); }
-}
-
-.decor-grass-1 { bottom: 6%; right: 22%; width: 50px; opacity: 0.5; }
-.decor-grass-2 { bottom: 20%; left: 24%; width: 40px; opacity: 0.4; }
-
 @media (max-width: 700px) {
   .decor { opacity: 0.3; }
   .decor-plane { display: none; }
 }
 
-/* dirt / crust strip */
-.crust {
+/* ── extra population ── */
+.decor-saturn { top: 22%; left: 8%; width: clamp(56px, 6.5vw, 90px); animation: floaty 12s ease-in-out infinite; }
+.decor-ufo { top: 62%; right: 30%; width: clamp(60px, 7vw, 95px); animation: ufoHover 6s ease-in-out infinite; }
+
+@keyframes ufoHover {
+  0%, 100% { transform: translate(0, 0) rotate(-2deg); }
+  50% { transform: translate(18px, -10px) rotate(2deg); }
+}
+
+.decor-flock { top: 30%; right: 10%; width: clamp(90px, 11vw, 150px); animation: drift 30s ease-in-out infinite alternate; }
+.decor-cloud-3 { bottom: 6%; right: 18%; width: clamp(90px, 11vw, 150px); opacity: 0.3; animation: drift 40s ease-in-out infinite alternate; }
+.decor-balloon-3 { top: 40%; right: 2%; width: clamp(38px, 4.5vw, 58px); opacity: 0.35; animation: floaty 13s ease-in-out 1s infinite; }
+.decor-about-birds { top: 8%; left: 6%; width: clamp(70px, 8vw, 110px); opacity: 0.45; animation: drift 24s ease-in-out infinite alternate; }
+.decor-kite-2 { bottom: 14%; right: 12%; width: clamp(50px, 6vw, 80px); transform-origin: 50% 20%; animation: kiteSway 7s ease-in-out 1s infinite; opacity: 0.4; }
+
+/* ── the ground line + standing animals ── */
+.ground {
+  max-width: 1200px;
+  margin: 3rem auto -1px;
   color: var(--ink);
-  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
-.crust svg {
-  display: block;
-  width: 100%;
-  height: 110px;
+.ground svg { display: block; width: 100%; height: auto; }
+
+.gnd-dog { animation: dogWalk 14s linear infinite; }
+@keyframes dogWalk {
+  0% { transform: translateX(-60px); }
+  100% { transform: translateX(760px); }
 }
 
-.crust-worm {
-  animation: wiggle 2.2s ease-in-out infinite;
+.gnd-dog .dog-tail { transform-origin: 380px 128px; animation: wag 0.4s ease-in-out infinite alternate; }
+@keyframes wag {
+  from { transform: rotate(-8deg); }
+  to { transform: rotate(14deg); }
 }
 
-@keyframes wiggle {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(10px); }
+.gnd-snail { animation: crawl 40s linear infinite; }
+@keyframes crawl {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(280px); }
+}
+
+.gnd-bunny { animation: hop 3s ease-in-out infinite; }
+@keyframes hop {
+  0%, 70%, 100% { transform: translate(0, 0); }
+  78% { transform: translate(-14px, -16px); }
+  86% { transform: translate(-28px, 0); }
+}
+
+.gnd-bird { transform-origin: 1035px 150px; animation: peck 2.4s ease-in-out infinite; }
+@keyframes peck {
+  0%, 40%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(10deg); }
+}
+
+/* below ground = dirt: dots behind contact + footer */
+.contact, footer { position: relative; }
+
+.contact::before, footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(28,27,24,0.17) 1.4px, transparent 1.7px),
+    radial-gradient(circle, rgba(28,27,24,0.10) 1px, transparent 1.3px);
+  background-size: 32px 32px, 19px 19px;
+  background-position: 0 0, 11px 8px;
+}
+
+footer::before {
+  background-image:
+    radial-gradient(circle, rgba(28,27,24,0.22) 1.6px, transparent 1.9px),
+    radial-gradient(circle, rgba(28,27,24,0.13) 1.1px, transparent 1.4px);
 }
 
 .section-title {
