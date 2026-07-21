@@ -4,14 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aun Ali</title>
+  <meta name="description" content="Aun Ali — computing student at Queen's University. I build software that ships.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-name">
+      <span class="loader-outline">AUN ALI</span>
+      <span class="loader-fill" id="loaderFill">AUN ALI</span>
+    </div>
+    <div class="loader-meta">
+      <span class="loader-count" id="loaderCount">00</span>
+      <span class="loader-label">Ajax → Kingston, Ontario</span>
+    </div>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
   <div class="cursor"></div>
   <div class="scroll-progress"></div>
 
@@ -34,7 +48,11 @@
     </div>
     <div class="hero-meta">
       <p class="hero-tagline">Computing @ Queen's University</p>
-      <p class="hero-sub">Software Development &amp; Machine Learning</p>
+      <p class="hero-sub">I build software that <em>ships</em>.</p>
+    </div>
+    <div class="hero-corner">
+      <span id="localTime">--:--</span>
+      <span>Ontario, Canada</span>
     </div>
     <div class="hero-scroll">
       <span class="scroll-label">Scroll</span>
@@ -45,39 +63,48 @@
   <!-- Marquee -->
   <div class="marquee-wrap" aria-hidden="true">
     <div class="marquee-track">
-      <span>Java</span><span class="dot">·</span>
-      <span>TypeScript</span><span class="dot">·</span>
-      <span>Python</span><span class="dot">·</span>
-      <span>React</span><span class="dot">·</span>
       <span>Next.js</span><span class="dot">·</span>
-      <span>FastAPI</span><span class="dot">·</span>
-      <span>PyTorch</span><span class="dot">·</span>
-      <span>Machine Learning</span><span class="dot">·</span>
-      <span>Systems Design</span><span class="dot">·</span>
-      <span>Java</span><span class="dot">·</span>
       <span>TypeScript</span><span class="dot">·</span>
+      <span>Java</span><span class="dot">·</span>
       <span>Python</span><span class="dot">·</span>
-      <span>React</span><span class="dot">·</span>
-      <span>Next.js</span><span class="dot">·</span>
-      <span>FastAPI</span><span class="dot">·</span>
       <span>PyTorch</span><span class="dot">·</span>
+      <span>Twilio</span><span class="dot">·</span>
+      <span>Tailwind</span><span class="dot">·</span>
+      <span>Vercel</span><span class="dot">·</span>
       <span>Machine Learning</span><span class="dot">·</span>
-      <span>Systems Design</span><span class="dot">·</span>
+      <span>Next.js</span><span class="dot">·</span>
+      <span>TypeScript</span><span class="dot">·</span>
+      <span>Java</span><span class="dot">·</span>
+      <span>Python</span><span class="dot">·</span>
+      <span>PyTorch</span><span class="dot">·</span>
+      <span>Twilio</span><span class="dot">·</span>
+      <span>Tailwind</span><span class="dot">·</span>
+      <span>Vercel</span><span class="dot">·</span>
+      <span>Machine Learning</span><span class="dot">·</span>
     </div>
   </div>
 
   <!-- About -->
   <section class="section about" id="about">
     <p class="section-label reveal">01 / About</p>
-    <div class="about-body">
-      <p class="about-text reveal">
-        Computing student at Queen's University with a focus on AI, full-stack development, and systems programming. I build focused software: deepfake detection pipelines, interactive visualizers, games from scratch. Currently exploring machine learning and scalable application architecture.
-      </p>
-      <div class="about-links reveal">
-        <a href="mailto:aun.ali@queensu.ca" class="link-line">Email</a>
-        <a href="https://linkedin.com/in/aunzite" target="_blank" rel="noopener" class="link-line">LinkedIn</a>
-        <a href="https://github.com/aunzite" target="_blank" rel="noopener" class="link-line">GitHub</a>
-        <a href="https://instagram.com/neuraunn" target="_blank" rel="noopener" class="link-line">Instagram</a>
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <img src="assets/me.jpg" alt="Aun Ali" id="aboutPhoto" onerror="this.closest('.about-photo').classList.add('empty')">
+        <span class="photo-caption">Kingston winters hit different</span>
+      </div>
+      <div class="about-body">
+        <p class="about-text reveal">
+          Second-year computing student at Queen's. I was self-taught before university and I still learn best by building: a rental platform running a real business, an SMS agent that recovers missed calls for local shops, a deepfake detector, a game from scratch. If it's live and someone's actually using it, I'm interested.
+        </p>
+        <p class="about-text reveal">
+          Right now I'm co-running <a href="https://callflowline.com" target="_blank" rel="noopener" class="inline-link">Flowline Communications</a> and looking for the next hard problem.
+        </p>
+        <div class="about-links reveal">
+          <a href="mailto:aun.ali@queensu.ca" class="link-line">Email</a>
+          <a href="https://linkedin.com/in/aunzite" target="_blank" rel="noopener" class="link-line">LinkedIn</a>
+          <a href="https://github.com/aunzite" target="_blank" rel="noopener" class="link-line">GitHub</a>
+          <a href="https://instagram.com/neuraunn" target="_blank" rel="noopener" class="link-line">Instagram</a>
+        </div>
       </div>
     </div>
   </section>
@@ -92,6 +119,50 @@
           <div class="project-left">
             <span class="project-num">01</span>
             <div class="project-name-wrap">
+              <span class="project-name">Yorkline Estates</span>
+              <span class="project-live">● Live</span>
+            </div>
+          </div>
+          <div class="project-right">
+            <span class="project-tech">Next.js · TypeScript · Tailwind</span>
+            <span class="project-arrow">+</span>
+          </div>
+        </div>
+        <div class="project-expand">
+          <div class="project-expand-inner">
+            <p class="project-desc">Full rental platform built solo for a real property business. City search with interactive maps, availability calendars, a four-step booking flow, and an admin dashboard with full property CRUD and auto-generated listing copy. Running in production on Vercel.</p>
+            <a href="https://yorkline-estates.vercel.app" target="_blank" rel="noopener" class="project-link">Visit site ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-row reveal">
+        <div class="project-header">
+          <div class="project-left">
+            <span class="project-num">02</span>
+            <div class="project-name-wrap">
+              <span class="project-name">Flowline Communications</span>
+              <span class="project-live">● Live</span>
+            </div>
+          </div>
+          <div class="project-right">
+            <span class="project-tech">Astro · Twilio · SMS AI</span>
+            <span class="project-arrow">+</span>
+          </div>
+        </div>
+        <div class="project-expand">
+          <div class="project-expand-inner">
+            <p class="project-desc">Co-founded a missed-call recovery agency for home-service businesses. When a call gets missed, our system texts the caller back, qualifies the job over SMS, and books it into the owner's calendar. I run sales and built the marketing site.</p>
+            <a href="https://callflowline.com" target="_blank" rel="noopener" class="project-link">Visit site ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-row reveal">
+        <div class="project-header">
+          <div class="project-left">
+            <span class="project-num">03</span>
+            <div class="project-name-wrap">
               <span class="project-name">DeepShield</span>
             </div>
           </div>
@@ -102,7 +173,7 @@
         </div>
         <div class="project-expand">
           <div class="project-expand-inner">
-            <p class="project-desc">Real-time deepfake detection web app using MediaPipe for facial landmark extraction and a PyTorch model for classification. Built with a TypeScript frontend and FastAPI backend.</p>
+            <p class="project-desc">Real-time deepfake detection web app using MediaPipe for facial landmark extraction and a PyTorch model for classification. TypeScript frontend, FastAPI backend.</p>
             <a href="https://github.com/aunzite/DeepShield" target="_blank" rel="noopener" class="project-link">View on GitHub ↗</a>
           </div>
         </div>
@@ -111,28 +182,7 @@
       <div class="project-row reveal">
         <div class="project-header">
           <div class="project-left">
-            <span class="project-num">02</span>
-            <div class="project-name-wrap">
-              <span class="project-name">Bubble Sort Visualizer</span>
-            </div>
-          </div>
-          <div class="project-right">
-            <span class="project-tech">Python · Gradio</span>
-            <span class="project-arrow">+</span>
-          </div>
-        </div>
-        <div class="project-expand">
-          <div class="project-expand-inner">
-            <p class="project-desc">Interactive algorithm visualizer built with Gradio and deployed on Hugging Face Spaces. Animates the bubble sort process step-by-step with a clean UI.</p>
-            <a href="https://github.com/aunzite/CISC121-Final-Project" target="_blank" rel="noopener" class="project-link">View on GitHub ↗</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-row reveal">
-        <div class="project-header">
-          <div class="project-left">
-            <span class="project-num">03</span>
+            <span class="project-num">04</span>
             <div class="project-name-wrap">
               <span class="project-name">Limitless</span>
             </div>
@@ -144,8 +194,49 @@
         </div>
         <div class="project-expand">
           <div class="project-expand-inner">
-            <p class="project-desc">2D side-scrolling game built entirely in Java with custom physics, collision detection, and sprite animation. Designed and developed independently over the summer.</p>
+            <p class="project-desc">2D side-scrolling game built in Java with custom physics, collision detection, and sprite animation. Two-person project where I handled all the technical systems.</p>
             <a href="https://github.com/aunzite/Limitless" target="_blank" rel="noopener" class="project-link">View on GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-row reveal">
+        <div class="project-header">
+          <div class="project-left">
+            <span class="project-num">05</span>
+            <div class="project-name-wrap">
+              <span class="project-name">FTC Competition Robot</span>
+            </div>
+          </div>
+          <div class="project-right">
+            <span class="project-tech">Java · Robotics</span>
+            <span class="project-arrow">+</span>
+          </div>
+        </div>
+        <div class="project-expand">
+          <div class="project-expand-inner">
+            <p class="project-desc">Sole programmer on a FIRST Tech Challenge robot: autonomous routines, driver-control mapping, and sensor integration for competition play.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-row reveal">
+        <div class="project-header">
+          <div class="project-left">
+            <span class="project-num">06</span>
+            <div class="project-name-wrap">
+              <span class="project-name">Bubble Sort Visualizer</span>
+            </div>
+          </div>
+          <div class="project-right">
+            <span class="project-tech">Python · Gradio</span>
+            <span class="project-arrow">+</span>
+          </div>
+        </div>
+        <div class="project-expand">
+          <div class="project-expand-inner">
+            <p class="project-desc">Interactive algorithm visualizer built with Gradio and deployed on Hugging Face Spaces. Animates bubble sort step-by-step.</p>
+            <a href="https://github.com/aunzite/CISC121-Final-Project" target="_blank" rel="noopener" class="project-link">View on GitHub ↗</a>
           </div>
         </div>
       </div>
@@ -160,18 +251,26 @@
 
       <div class="exp-row reveal">
         <div class="exp-left">
-          <span class="exp-title">BSc Computing (Honours)</span>
-          <span class="exp-org">Queen's University</span>
+          <span class="exp-title">Co-Founder</span>
+          <span class="exp-org">Flowline Communications</span>
         </div>
-        <span class="exp-date">2025 — Present</span>
+        <span class="exp-date">Jul 2026 — Present</span>
       </div>
 
       <div class="exp-row reveal">
         <div class="exp-left">
-          <span class="exp-title">Front Desk Receptionist</span>
-          <span class="exp-org">ASUS · Queen's University</span>
+          <span class="exp-title">Full Stack Developer</span>
+          <span class="exp-org">Yorkline Estates</span>
         </div>
-        <span class="exp-date">Sep 2025 — Apr 2026</span>
+        <span class="exp-date">2026 — Present</span>
+      </div>
+
+      <div class="exp-row reveal">
+        <div class="exp-left">
+          <span class="exp-title">Research Lead</span>
+          <span class="exp-org">Riipen Labs × UpNxxt</span>
+        </div>
+        <span class="exp-date">Jun 2026</span>
       </div>
 
       <div class="exp-row reveal">
@@ -180,6 +279,22 @@
           <span class="exp-org">Arts &amp; Science Students' Society</span>
         </div>
         <span class="exp-date">May 2026 — Present</span>
+      </div>
+
+      <div class="exp-row reveal">
+        <div class="exp-left">
+          <span class="exp-title">Marketing Executive</span>
+          <span class="exp-org">Queen's UX Club</span>
+        </div>
+        <span class="exp-date">2025 — Present</span>
+      </div>
+
+      <div class="exp-row reveal">
+        <div class="exp-left">
+          <span class="exp-title">BSc Computing (Honours)</span>
+          <span class="exp-org">Queen's University</span>
+        </div>
+        <span class="exp-date">2025 — Present</span>
       </div>
 
     </div>
@@ -202,7 +317,7 @@
 
   <footer>
     <span>© 2026 Aun Ali</span>
-    <span>Queen's Computing</span>
+    <span>Built from scratch. No template.</span>
   </footer>
 
   <script src="lenis.min.js"></script>

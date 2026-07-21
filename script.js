@@ -2,6 +2,51 @@ const progressBar = document.querySelector('.scroll-progress');
 const nav = document.querySelector('nav');
 const hero = document.querySelector('.hero');
 const cursor = document.querySelector('.cursor');
+const loader = document.getElementById('loader');
+const loaderFill = document.getElementById('loaderFill');
+const loaderCount = document.getElementById('loaderCount');
+
+// ── Loader ─────────────────────────────────────────────────────
+document.body.classList.add('loading');
+
+let progress = 0;
+const loadStart = performance.now();
+const LOAD_DURATION = 1900;
+
+function tickLoader(now) {
+  const t = Math.min((now - loadStart) / LOAD_DURATION, 1);
+  // ease-out so it slows near the end, feels like a real load
+  const eased = 1 - Math.pow(1 - t, 3);
+  progress = Math.floor(eased * 100);
+  loaderCount.textContent = String(progress).padStart(2, '0');
+  loaderFill.style.clipPath = `inset(${100 - progress}% 0 0 0)`;
+  if (t < 1) {
+    requestAnimationFrame(tickLoader);
+  } else {
+    setTimeout(finishLoad, 250);
+  }
+}
+
+function finishLoad() {
+  loader.classList.add('done');
+  document.body.classList.remove('loading');
+  document.body.classList.add('loaded');
+  setTimeout(() => loader.remove(), 1100);
+}
+
+requestAnimationFrame(tickLoader);
+
+// ── Local time (Ontario) ───────────────────────────────────────
+const timeEl = document.getElementById('localTime');
+function updateTime() {
+  timeEl.textContent = new Intl.DateTimeFormat('en-CA', {
+    hour: 'numeric',
+    minute: '2-digit',
+    timeZone: 'America/Toronto',
+  }).format(new Date());
+}
+updateTime();
+setInterval(updateTime, 30000);
 
 // ── Smooth scroll (Lenis) ──────────────────────────────────────
 const lenis = new Lenis({
