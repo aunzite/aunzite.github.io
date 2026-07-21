@@ -398,9 +398,9 @@ body.loaded .hero-scroll { opacity: 1; }
    SECTIONS
    =========================== */
 .section {
-  padding: 7rem var(--pad);
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 7rem max(var(--pad), calc((100% - 1200px) / 2));
+  max-width: none;
+  margin: 0;
   position: relative;
 }
 
@@ -542,8 +542,8 @@ body.loaded .decor-shooting {
 
 /* ── the ground line + standing animals ── */
 .ground {
-  max-width: 1200px;
-  margin: 3rem auto -1px;
+  max-width: none;
+  margin: 3rem 0 -1px;
   color: var(--ink);
   position: relative;
   z-index: 1;
