@@ -26,6 +26,8 @@
 html {
   scroll-behavior: smooth;
   background: var(--paper);
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -190,8 +192,14 @@ nav {
 }
 
 @media (max-width: 600px) {
-  .nav-links { gap: 1rem; }
-  .nav-links a { font-size: 0.95rem; }
+  nav { padding: 1.1rem 1rem; }
+  .nav-logo { font-size: 1.3rem; }
+  .nav-links { gap: 0.7rem; }
+  .nav-links a { font-size: 0.82rem; }
+}
+
+@media (max-width: 360px) {
+  .nav-logo { display: none; }
 }
 
 /* ===========================
@@ -1138,12 +1146,9 @@ footer::before {
   transform: scale(1.15);
 }
 
-@media (hover: none) {
-  .draw-color { cursor: pointer; }
-}
-
-@media (max-width: 600px) {
-  .draw-hint { display: none; }
+/* drawing is a desktop delight; on touch it fights scrolling, so hide it */
+@media (hover: none), (max-width: 700px) {
+  .draw-ui, #drawCanvas { display: none; }
 }
 
 /* ===========================

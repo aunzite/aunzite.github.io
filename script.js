@@ -183,7 +183,10 @@ function extendStroke(x, y) {
   }
 }
 
+const canDraw = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
 document.addEventListener('pointerdown', (e) => {
+  if (!canDraw) return; // touch devices: let scrolling / text selection work normally
   // don't draw when clicking interactive stuff
   if (e.target.closest('a, button, .project-header, nav')) return;
   document.body.classList.add('drawing');
