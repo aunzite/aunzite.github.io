@@ -1177,3 +1177,54 @@ footer {
   .hero-underline path, .quest-tick, .title-circle path { stroke-dashoffset: 0; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ===========================
+   MOBILE TYPE + SPACING HARMONY
+   =========================== */
+@media (max-width: 600px) {
+  /* tighter vertical rhythm so sections don't feel sparse */
+  .section { padding-top: 4rem; padding-bottom: 4rem; }
+  .section-title { font-size: 2.15rem; margin-bottom: 1.8rem; }
+
+  /* hero: pull the statement in a bit, lift the body copy */
+  .hero-name { font-size: clamp(3.6rem, 20vw, 5rem); }
+  .hero-hello { font-size: 1.5rem; }
+  .hero-sub { font-size: 0.95rem; margin-top: 1.2rem; }
+
+  /* marquee */
+  .marquee-track { font-size: 1.2rem; gap: 1.3rem; }
+
+  /* about */
+  .about-text { font-size: 1.05rem; line-height: 1.65; }
+  .about-text + .about-text { margin-top: 1rem; }
+  .polaroid-caption { font-size: 1.1rem; }
+
+  /* projects: smaller names, tighter rows */
+  .project-header { padding: 1.15rem 0.3rem; }
+  .project-name { font-size: 1.7rem; }
+  .project-live { font-size: 0.9rem; }
+  .project-desc { font-size: 0.9rem; }
+
+  /* quest log */
+  .quest-row { padding: 0.85rem 0.3rem; gap: 0.9rem; }
+  .quest-title { font-size: 1.3rem; }
+  .quest-desc { font-size: 0.82rem; }
+  .quest-check { width: 26px; }
+
+  /* contact cards */
+  .card-grid { gap: 1.1rem; }
+  .player-card { padding: 1.2rem 1.2rem 1rem; }
+  .card-handle { font-size: 1.7rem; }
+  .card-line { font-size: 1rem; }
+  .contact-big { font-size: clamp(3.5rem, 20vw, 5rem); }
+  .email-btn { font-size: 1.3rem; }
+  .email-note { font-size: 1.15rem; }
+
+  /* footer */
+  footer { font-size: 1rem; flex-direction: column; gap: 0.3rem; text-align: center; }
+
+  /* decor: dial back so it reads as background, not clutter, at small size */
+  .decor { opacity: 0.4; }
+  .decor-saturn, .decor-ufo { width: clamp(44px, 12vw, 60px); }
+  .hero-rocket { width: 72px; }
+}
